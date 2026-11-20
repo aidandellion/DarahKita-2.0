@@ -1,0 +1,19 @@
+{
+  "name": "darahkita-api",
+  "version": "1.0.0",
+  "description": "In-house REST API for DarahKita (eligibility, booking validation, GPS check-in, stock alerts, scheduled jobs)",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "firebase-admin": "^13.0.0"
+  }
+}

@@ -1,0 +1,27 @@
+# Render Blueprint (optional). Must sit at the repo root; the API lives in /api.
+# You can also click through the dashboard and set Root Directory = api instead.
+services:
+  - type: web
+    name: darahkita-api
+    runtime: node
+    plan: free
+    rootDir: api
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: JOB_SECRET
+        sync: false
+      - key: EMAILJS_REMINDER_SERVICE_ID
+        sync: false
+      - key: EMAILJS_REMINDER_TEMPLATE_ID
+        sync: false
+      - key: EMAILJS_PUBLIC_KEY
+        sync: false
+      - key: EMAILJS_PRIVATE_KEY
+        sync: false

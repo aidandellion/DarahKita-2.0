@@ -1,0 +1,31 @@
+name: Scheduled jobs
+
+on:
+  schedule:
+    # GitHub cron is UTC. 01:17 UTC = 09:17 Malaysia time. Off the hour on purpose (GitHub is busy at :00).
+    - cron: '17 1 * * *'
+  workflow_dispatch: # "Run workflow" button, use this for the demo video and testing
+
+jobs:
+  run-jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake the API (free host sleeps when idle)
+        run: |
+          curl --fail --silent --show-error \
+            --retry 6 --retry-delay 15 --retry-all-errors --max-time 90 \
+            "${{ secrets.API_URL }}/health"
+
+      - name: Send reminders for tomorrow's bookings
+        run: |
+          curl --fail --silent --show-error -X POST \
+            --retry 3 --retry-delay 10 --retry-all-errors --max-time 120 \
+            -H "x-job-secret: ${{ secrets.JOB_SECRET }}" \
+            "${{ secrets.API_URL }}/v1/jobs/send-reminders"
+
+      - name: Expire past announcements
+        run: |
+          curl --fail --silent --show-error -X POST \
+            --retry 3 --retry-delay 10 --retry-all-errors --max-time 120 \
+            -H "x-job-secret: ${{ secrets.JOB_SECRET }}" \
+            "${{ secrets.API_URL }}/v1/jobs/expire-announcements"
