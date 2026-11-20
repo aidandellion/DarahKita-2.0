@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical" android:background="@drawable/bg_card_centre_white"
+    android:padding="18dp" android:layout_marginBottom="14dp">
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <FrameLayout android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_card_pink">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_gravity="center" android:src="@drawable/ic_hospital_pink"/>
+        </FrameLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+            android:orientation="vertical" android:layout_marginStart="14dp">
+            <TextView android:id="@+id/tvCentreName" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="17sp" android:textStyle="bold" android:textColor="#1A1A2E"/>
+            <TextView android:id="@+id/tvCentreAddress" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="13sp" android:textColor="#9E9E9E" android:layout_marginTop="2dp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/btnChooseTime" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center" android:background="@drawable/bg_btn_choose_time"
+        android:padding="14dp" android:layout_marginTop="16dp" android:clickable="true" android:focusable="true">
+        <ImageView android:layout_width="18dp" android:layout_height="18dp" android:src="@drawable/ic_clock_pink"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Choose Time"
+            android:textSize="15sp" android:textStyle="bold" android:textColor="#8E2A4A" android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout>

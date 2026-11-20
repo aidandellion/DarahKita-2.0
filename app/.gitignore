@@ -1,0 +1,28 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Build directories
+/build
+/app/build
+
+# Local configuration
+local.properties
+
+# Gradle
+.gradle
+gradle-wrapper.jar
+
+# Android Studio
+*.iml
+.idea/
+.DS_Store
+
+# Keystore
+*.jks
+*.keystore
+
+# Google Services - keep this in git
+#google-services.json

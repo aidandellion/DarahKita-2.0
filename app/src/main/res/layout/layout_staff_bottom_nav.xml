@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Reusable bottom navigation bar for STAFF screens only.
+    Donor screens use layout_bottom_nav.xml instead — these are
+    intentionally separate since staff and donor have different tab sets.
+
+    Include this in every staff screen with:
+
+        <include
+            android:id="@+id/staffBottomNavBar"
+            layout="@layout/layout_staff_bottom_nav" />
+
+    Then in onCreate():
+
+        StaffBottomNavHelper.setup(this, findViewById(R.id.staffBottomNavBar), StaffBottomNavHelper.Tab.DASHBOARD);
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="84dp"
+    android:background="@drawable/bg_staff_nav"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:elevation="12dp">
+
+    <!-- Dashboard -->
+    <LinearLayout
+        android:id="@+id/navDashboard"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconNavDashboard"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_nav_dashboard"
+            android:tint="@color/staff_nav_unselected"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tvNavDashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Dashboard"
+            android:textColor="@color/staff_nav_unselected"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Queue -->
+    <LinearLayout
+        android:id="@+id/navQueue"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconNavQueue"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_nav_queue"
+            android:tint="@color/staff_nav_unselected"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tvNavQueue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Queue"
+            android:textColor="@color/staff_nav_unselected"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Search -->
+    <LinearLayout
+        android:id="@+id/navSearch"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconNavSearch"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_nav_search"
+            android:tint="@color/staff_nav_unselected"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tvNavSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Search"
+            android:textColor="@color/staff_nav_unselected"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Stock -->
+    <LinearLayout
+        android:id="@+id/navStock"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconNavStock"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_nav_stock"
+            android:tint="@color/staff_nav_unselected"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tvNavStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Stock"
+            android:textColor="@color/staff_nav_unselected"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Profile -->
+    <LinearLayout
+        android:id="@+id/navStaffProfile"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/iconNavStaffProfile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_nav_profile"
+            android:tint="@color/staff_nav_unselected"
+            android:contentDescription="@null"/>
+
+        <TextView
+            android:id="@+id/tvNavStaffProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Profile"
+            android:textColor="@color/staff_nav_unselected"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

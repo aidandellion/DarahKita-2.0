@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent" android:background="#FFFFFF">
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="0dp" android:orientation="vertical" android:padding="24dp"
+        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Booking Hub"
+            android:textSize="28sp" android:textStyle="bold" android:textColor="#1A1A2E" android:layout_marginTop="16dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Manage your donation journey here."
+            android:textSize="15sp" android:textColor="#757575" android:layout_marginTop="4dp" android:layout_marginBottom="24dp"/>
+
+        <LinearLayout android:id="@+id/cardBookSlot" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_card_pink"
+            android:padding="20dp" android:layout_marginBottom="16dp" android:clickable="true" android:focusable="true">
+            <FrameLayout android:layout_width="56dp" android:layout_height="56dp" android:background="@drawable/bg_icon_box_white">
+                <ImageView android:layout_width="28dp" android:layout_height="28dp" android:layout_gravity="center" android:src="@drawable/ic_calendar_red"/>
+            </FrameLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="16dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Book a New Slot" android:textSize="18sp" android:textStyle="bold" android:textColor="#8E2A4A"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check eligibility &amp; book a time" android:textSize="13sp" android:textColor="#A24A63"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/cardCheckIn" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/bg_card_dark"
+            android:padding="20dp" android:clickable="true" android:focusable="true">
+
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <FrameLayout android:layout_width="56dp" android:layout_height="56dp" android:background="@drawable/bg_icon_box_dark">
+                    <ImageView android:layout_width="28dp" android:layout_height="28dp" android:layout_gravity="center" android:src="@drawable/ic_location_white"/>
+                </FrameLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Check-In via Location" android:textSize="18sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tap here when you arrive at the centre" android:textSize="13sp" android:textColor="#BDBDBD"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- status text, shows green/red message -->
+            <TextView
+                android:id="@+id/tvCheckInStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:gravity="center"
+                android:visibility="gone"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <include android:id="@+id/bottomNav" layout="@layout/bottom_nav_bar"
+        android:layout_width="match_parent" android:layout_height="88dp"
+        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

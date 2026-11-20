@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- DarahKita brand palette -->
+    <color name="darahkita_red">#B24640</color>
+    <color name="darahkita_bg">#FDF5F5</color>
+    <color name="darahkita_avatar_bg">#F9D6D6</color>
+    <color name="darahkita_text_primary">#1A1A1A</color>
+    <color name="darahkita_text_secondary">#4A4A4A</color>
+    <color name="darahkita_text_muted">#9B9B9B</color>
+
+    <!-- Staff dashboard additions -->
+    <color name="staff_nav_bg">#B24640</color>
+    <color name="staff_nav_unselected">#F0C9C7</color>
+    <color name="staff_nav_selected">#FFFFFF</color>
+    <color name="stat_card_border">#EAE0DE</color>
+    <color name="critical_card_top">#D32F2F</color>
+    <color name="critical_card_bottom">#8B1A1A</color>
+    <color name="action_btn_border">#E5DAD8</color>
+
+    <!-- Aliases so dashboard drawables resolve to existing brand colors -->
+    <color name="bg_card_white">#FFFFFF</color>
+    <color name="brand_red">#B24640</color>
+    <color name="text_primary">#1A1A1A</color>
+    <color name="text_secondary">#4A4A4A</color>
+    <color name="bg_app">#FDF5F5</color>
+    <color name="text_on_red">#FFFFFF</color>
+    <color name="alert_bg">#FCF6D9</color>
+    <color name="alert_border">#EBD98C</color>
+    <color name="alert_icon_bg">#F2A93B</color>
+    <color name="alert_title_text">#7A3B0E</color>
+    <color name="alert_body_text">#A6651D</color>
+    <color name="nav_selected">#B24640</color>
+    <color name="nav_unselected">#A39A99</color>
+    <color name="centre_icon_bg">#F9D6D6</color>
+    <color name="alert_bg_logout">#FCEAE9</color>
+</resources>

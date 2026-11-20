@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:background="@drawable/bg_urgent_banner" android:padding="18dp"
+    android:layout_marginBottom="12dp">
+
+    <FrameLayout android:layout_width="44dp" android:layout_height="44dp" android:background="@drawable/bg_icon_circle_orange">
+        <ImageView android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:src="@drawable/ic_warning_white"/>
+    </FrameLayout>
+
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+        android:orientation="vertical" android:layout_marginStart="14dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Urgent: Blood Needed!" android:textSize="16sp" android:textStyle="bold" android:textColor="#8D5A00"/>
+        <TextView android:id="@+id/tvLowStockMessage" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textSize="13sp" android:textColor="#A06A1E" android:layout_marginTop="2dp"/>
+    </LinearLayout>
+</LinearLayout>

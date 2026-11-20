@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- kene ade ni kalo x xley connect internet, obvious la kan -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- ni utk gps, aiman punye jgn kacau -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- ntah nape ade ni tp letak je la -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- kalo xde ni notif xkeluar, trust me da cube -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <!-- utk alarm reminder, aiman punye jugak -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DarahKita">
+
+        <!-- maps google-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${MAPS_API_KEY}" />
+
+        <!-- khai punye -->
+        <activity android:name=".activities.staff.StaffProfileActivity" android:exported="false"/>
+        <activity android:name=".activities.staff.StockActivity" android:exported="false"/>
+        <activity android:name=".activities.staff.SearchActivity" android:exported="false"/>
+        <activity android:name=".activities.staff.QueueActivity" android:exported="false"/>
+
+        <!-- aida punye -->
+        <activity android:name=".activities.donor.EditProfileActivity" android:exported="false"/>
+        <activity android:name=".activities.donor.ProfileActivity" android:exported="false"/>
+
+        <!-- splash screen, first thing user nmpk -->
+        <activity
+            android:name=".activities.auth.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.DarahKita.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- aiman punye, jgn tuch -->
+        <activity android:name=".activities.donor.MapActivity"/>
+
+        <!-- aida punye -->
+        <activity android:name=".activities.auth.RegisterActivity"/>
+        <activity android:name=".activities.auth.LoginActivity" android:exported="true"/>
+        <activity android:name=".activities.donor.DonorDashboardActivity"/>
+
+        <!-- khai punye -->
+        <activity android:name=".activities.staff.StaffDashboardActivity" android:exported="false"/>
+        <activity android:name=".activities.staff.ProfileActivity" android:exported="false"/>
+
+        <!-- shaza punye -->
+        <activity android:name=".activities.donor.BookingHubActivity"/>
+        <activity android:name=".activities.donor.DonationHistoryActivity"/>
+        <activity android:name=".activities.donor.EligibilityScreeningActivity"/>
+        <activity android:name=".activities.donor.SelectLocationActivity"/>
+        <activity android:name=".activities.donor.SelectDateTimeActivity"/>
+        <activity android:name=".activities.donor.DonationScheduleActivity"/>
+
+        <!-- aiman punye - fcm notif handler -->
+        <service
+            android:name=".utils.MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <!-- aiman punye - alarm utk reminder email -->
+        <receiver android:name=".utils.ReminderReceiver" android:exported="false"/>
+
+    </application>
+</manifest>

@@ -1,0 +1,90 @@
+{
+  "centres": {
+    "centre1": {
+      "name": "Hospital Shah Alam",
+      "address": "Seksyen 7, Shah Alam",
+      "latitude": 3.0738,
+      "longitude": 101.5183
+    },
+    "centre2": {
+      "name": "UiTM Medical Centre",
+      "address": "Seksyen 7, Shah Alam",
+      "latitude": 3.0656,
+      "longitude": 101.4997
+    },
+    "centre3": {
+      "name": "Pusat Darah Negara",
+      "address": "Jalan Tun Razak, KL",
+      "latitude": 3.1730,
+      "longitude": 101.7080
+    }
+  },
+  "alerts": {
+    "urgent": {
+      "active": true,
+      "message": "Type O- is urgently required at Hospital Shah Alam."
+    }
+  },
+  "bookings": {
+    "booking1": {
+      "donorId": "X8AQ58xzRdh194JOv9IR3m83cF32",
+      "donorName": "Aiman",
+      "centreId": "centre1",
+      "centreName": "Hospital Shah Alam",
+      "centreAddress": "Seksyen 7, Shah Alam",
+      "centreLat": 3.0738,
+      "centreLng": 101.5183,
+      "date": "2026-07-15",
+      "time": "10:00 AM",
+      "status": "Upcoming",
+      "donationType": "Whole Blood",
+      "eligible": true,
+      "createdAt": 1750000000000
+    },
+    "booking2": {
+      "donorId": "X8AQ58xzRdh194JOv9IR3m83cF32",
+      "donorName": "Aiman",
+      "centreId": "centre1",
+      "centreName": "Hospital Shah Alam",
+      "centreAddress": "Seksyen 7, Shah Alam",
+      "centreLat": 3.0738,
+      "centreLng": 101.5183,
+      "date": "2026-01-15",
+      "time": "09:00 AM",
+      "status": "Completed",
+      "donationType": "Whole Blood",
+      "eligible": true,
+      "createdAt": 1750000000000
+    },
+    "booking3": {
+      "donorId": "X8AQ58xzRdh194JOv9IR3m83cF32",
+      "donorName": "Aiman",
+      "centreId": "centre3",
+      "centreName": "Pusat Darah Negara",
+      "centreAddress": "Jalan Tun Razak, KL",
+      "centreLat": 3.1730,
+      "centreLng": 101.7080,
+      "date": "2025-12-12",
+      "time": "11:00 AM",
+      "status": "Absent",
+      "donationType": "Whole Blood",
+      "eligible": true,
+      "createdAt": 1750000000000
+    },
+    "booking4": {
+      "donorId": "X8AQ58xzRdh194JOv9IR3m83cF32",
+      "donorName": "Aiman",
+      "centreId": "centre3",
+      "centreName": "Pusat Darah Negara",
+      "centreAddress": "Jalan Tun Razak, KL",
+      "centreLat": 3.1730,
+      "centreLng": 101.7080,
+      "date": "2025-10-10",
+      "time": "02:00 PM",
+      "status": "Completed",
+      "donationType": "Whole Blood",
+      "eligible": true,
+      "createdAt": 1750000000000
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cardRoot" android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/bg_card_history_pink"
+    android:padding="16dp" android:layout_marginBottom="12dp">
+    <FrameLayout android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_icon_box_white">
+        <ImageView android:id="@+id/ivHistoryIcon" android:layout_width="22dp" android:layout_height="22dp" android:layout_gravity="center" android:src="@drawable/ic_history_red"/>
+    </FrameLayout>
+    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical" android:layout_marginStart="14dp">
+        <TextView android:id="@+id/tvCentreName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="16sp" android:textStyle="bold" android:textColor="#8E2A4A"/>
+        <TextView android:id="@+id/tvDateType" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textColor="#A24A63" android:layout_marginTop="2dp"/>
+    </LinearLayout>
+    <TextView android:id="@+id/tvStatus" android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingTop="5dp" android:paddingBottom="5dp"
+        android:textSize="12sp" android:textStyle="bold" android:background="@drawable/bg_status_pill"
+        android:layout_marginStart="8dp"/>
+</LinearLayout>
