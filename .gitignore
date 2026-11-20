@@ -19,3 +19,5 @@ google-services.json
 node_modules/
 api/.env
 api/serviceAccountKey.json
+
+.idea/
