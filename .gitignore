@@ -14,3 +14,8 @@
 .cxx
 local.properties
 google-services.json
+
+# API (Node)
+node_modules/
+api/.env
+api/serviceAccountKey.json
