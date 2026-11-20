@@ -1,12 +1,59 @@
 # DarahKita API contract (v1)
 
-Base URL: `https://<your-service>.onrender.com/v1`  (health check: `GET /health`, no `/v1`)
+Base URL: `https://darahkita-api.onrender.com/v1`  (health check: `GET /health`, no `/v1`)
 
 All requests and responses are JSON. Dates in requests and responses are `YYYY-MM-DD` in Malaysia time. Errors always look like:
 
 ```json
 { "error": "SLOT_FULL", "message": "This time slot is full" }
 ```
+
+## Getting started (for the team)
+
+**Live API:** https://darahkita-api.onrender.com  (health check: `GET /health`)
+**Base URL for all endpoints:** `https://darahkita-api.onrender.com/v1`
+**Code:** the `api/` folder of this repo. **Hosting:** Render (free plan). **Scheduler:** GitHub Actions (`.github/workflows/scheduler.yml`, daily 09:17 MYT).
+
+### Cold start
+The free host sleeps after about 15 minutes idle. The first call after that can take 30–60 seconds, and later calls take well under a second. In the app, use 60 s timeouts and show a loading indicator. In Postman, set the request timeout to at least 60 s, or call `GET /health` first to wake the service.
+
+### Get a token to test with
+Every donor and staff call needs a Firebase ID token (valid about 1 hour). Log in with a test account using the project's Firebase Web API key (shared in the group chat, not in this repo).
+
+PowerShell:
+```powershell
+$key = "FIREBASE_WEB_API_KEY"
+$r = Invoke-RestMethod -Method Post -Uri "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=$key" -ContentType "application/json" -Body '{"email":"EMAIL","password":"PASSWORD","returnSecureToken":true}'
+$t = $r.idToken
+```
+
+Then call an endpoint:
+```powershell
+Invoke-RestMethod -Uri "https://darahkita-api.onrender.com/v1/me/eligibility" -Headers @{Authorization="Bearer $t"}
+```
+
+In Postman, send the same login request as a POST, copy `idToken` from the response, and set `Authorization: Bearer <idToken>` on later requests. Store the base URL and token as collection variables.
+
+### Test accounts
+A donor account and a staff account are shared in the group chat. Staff accounts can only change bookings at their own centre (`403 FORBIDDEN – Different centre` otherwise). A donor can only use their own bookings (`404 BOOKING_NOT_FOUND` for someone else's).
+
+### Reading errors in PowerShell 5.1
+PowerShell hides error bodies. Use this to see the status and the JSON message:
+```powershell
+try { <your Invoke-RestMethod call> } catch { $_.Exception.Response.StatusCode.value__; (New-Object System.IO.StreamReader($_.Exception.Response.GetResponseStream())).ReadToEnd() }
+```
+
+### Who uses what
+- **B (app):** endpoints 2–7. The eligibility screen is already refactored on branch `feature/api-eligibility`, so follow the same pattern (`app/.../api/` package: `ApiClient`, `AuthInterceptor`, `DarahKitaApi`).
+- **C (staff, jobs, security):** endpoints 6–9, EmailJS server-side variables on Render, and the Firestore security rules.
+- **D (testing, report):** Postman collection from this contract and the report diagrams.
+
+### Verified live (20 Nov 2026)
+Eligibility check, booking creation (including double-booking 409), check-in (`NOT_AT_CENTRE` and success), staff status, staff stock, and the scheduler workflow. Not yet verified live: the reminder email (EmailJS is not configured on the server yet).
+
+### Rules for everyone
+- Never commit `google-services.json`, `local.properties`, `.env` files or any service account key.
+- Announce contract changes in the group chat before editing this file.
 
 ## Authentication
 
